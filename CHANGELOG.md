@@ -20,6 +20,42 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 - Nothing
 -----------
 
+## [3.5.9] - 2018-09-28
+
+- fixed #1732 - added support for laravel/translatable 3.x;
+
+
+## [3.5.8] - 2018-09-28
+
+- fixed #1730 - export buttons causing issues; broken list view;
+
+## [3.5.7] - 2018-09-27
+
+- fixed #1730 - filtered list view count wasn't quite right;
+
+## [3.5.6] - 2018-09-27
+
+- fixed #1728;
+
+## [3.5.5] - 2018-09-27
+
+- fixed #1723 - export buttons look bad when bulk buttons are missing;
+
+## [3.5.4] - 2018-09-26
+
+- fixed #1723 - export buttons now showing;
+- fixed #1535 - orderBy did not get respected;
+
+## [3.5.3] - 2018-09-23
+
+- fixed clone button using POST method for AJAX;
+- CRUD buttons sometimes extended beyond table;
+
+## [3.5.2] - 2018-09-22
+
+- Travis CI config file changes;
+
+
 ## [3.5.1] - 2018-09-22
 
 - composer.json change, requiring Backpack/Base 1.0.x;

@@ -31,7 +31,8 @@ trait ListOperation
         $this->crud->hasAccessOrFail('list');
         $this->crud->setOperation('list');
 
-        $totalRows = $filteredRows = $this->crud->count();
+        $totalRows = $this->crud->model->count();
+        $filteredRows = $this->crud->count();
         $startIndex = $this->request->input('start') ?: 0;
         // if a search term was present
         if ($this->request->input('search') && $this->request->input('search')['value']) {
@@ -57,7 +58,7 @@ trait ListOperation
                 // clear any past orderBy rules
                 $this->crud->query->getQuery()->orders = null;
                 // apply the current orderBy rules
-                $this->crud->orderBy($column['name'], $column_direction);
+                $this->crud->query->orderBy($column['name'], $column_direction);
             }
 
             // check for custom order logic in the column definition
