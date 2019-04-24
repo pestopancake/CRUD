@@ -20,6 +20,134 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 - Nothing
 -----------
 
+## [3.6.13] - 2019-04-10
+
+### Fixed
+- merged #1803 - ```enum``` field type uses one less query to determine enum options;
+- #1771 - ```datetime_picker``` field can be manually edited;
+- merged #1764 fixes #1763 - persistent table local storage key is now the route instead of the plural name of the entity, because sometimes there can be two entities with the same plural name (or two cruds for one entity) so that is not unique;
+- merged #1778 - don't escape labels in Show view;
+
+
+## [3.6.12] - 2019-04-10
+
+### Added
+- merged #1850 - added ```dec_point``` and ```thousands_sep``` to ```number``` column type; parameters and defaults are now the same as PHP's number_format() method: https://www.php.net/manual/en/function.number-format.php
+
+
+## [3.6.11] - 2019-04-09
+
+### Fixed
+- #1851 - cdn.rawgit.com will stop working in October 2019; switched to a different CDN;
+- merged #1822 - vertical tabs can be enabled and switched with one line instead of two;
+- #1829 - when the item is not deleted, a success bubble is no longer shown, but a warning;
+
+
+## [3.6.10] - 2019-04-01
+
+### Fixed
+- #1769 - vertical tabs not showing on the same line as form content;
+
+
+## [3.6.9] - 2019-04-01
+
+### Fixed
+- merged #1840 - when errors happen in forms with tabs, the first tab that has an error gets selected by default;
+
+
+## [3.6.8] - 2019-04-01
+
+### Fixed
+- hotfix extra brackets introduced in #1847;
+
+
+## [3.6.7] - 2019-04-01
+
+### Added
+- merged #1847 - added ```include_all_form_fields``` option for select2_from_ajax and select2_from_ajax_multiple fields, so that developers can choose NOT to send all form values in the AJAX request;
+
+
+## [3.6.6] - 2019-03-13
+
+### Fixed
+- #1801 - for CRUDs, you can now use entity names that happen to be the same as variables that are already in every request;
+- #1563 - allow using database prefix with AutoSet;
+
+### Added
+- merged #1782 - adds unofficial MongoDB support; with a few caveats: all columns are nullable; hasColumn() will always return true - so accidentally adding a column twice will be a bad experience for the developer;
+- #1818 - ```limit``` attribute to the ```select``` column; defaults to 50;
+
+## [3.6.5] - 2019-03-12
+
+### Fixed
+- merged #1830 - ```fire()``` function is not defined in the loaded Dispatcher and throws an error when using sluggables in translatable CRUDs;
+
+
+## [3.6.4] - 2019-03-03
+
+### Fixed
+- ```view``` field type now works with PHP 7.3 (it did not, because of ```compact()``` usage); merged #1825;
+- merged #1804 - fixes ```select_grouped``` field for some people;
+
+
+## [3.6.3] - 2019-03-01
+
+### Fixed
+- unit tests on Laravel 5.8;
+
+
+## [3.6.2] - 2019-03-01
+
+### Fixed
+- date and datetime columns now using carbon v2;
+
+
+## [3.6.1] - 2019-03-01
+
+### Added
+- support for Laravel 5.8 through Base 1.1;
+
+### Fixed
+- Italian translation, thanks to [Roberto Butti](https://github.com/roberto-butti);
+
+
+## [3.5.14] - 2019-01-24
+
+### Added
+- #1749 - ```$crud->getFilter('name')``` and ```$crud->hasActiveFilter('name')``` methods for Filters;
+
+### Fixed
+- #1792 - javascript error on Show page, due to Clone button;
+- #1790 - DE translation;
+- #1777 - back button; PT translation;
+
+
+## [3.5.13] - 2019-01-07
+
+### Added
+- #1783 - ```limit``` functionality to the ```email``` column type;
+- #1770 - added support for dot notation to all relevant column types;
+
+
+## [3.5.12] - 2018-12-28
+
+### Added
+- #1758 - ```image``` column type can now show the image of a connected entity, if you use dot notation for the column name;
+
+
+## [3.5.11] - 2018-12-13
+
+### Fixed
+- #1736 - minor CSS issues in list;
+- #1068 - better date and datetime search; searching for "28 nov 2018" now works too, search strings no longer have to be in MySQL format;
+
+
+## [3.5.10] - 2018-12-05
+
+- merged #1741 - deprecated ```CrudRequest``` uses ```backpack_auth()```;
+- upgraded PHPUnit to v7;
+
+
 ## [3.5.9] - 2018-09-28
 
 - fixed #1732 - added support for laravel/translatable 3.x;
